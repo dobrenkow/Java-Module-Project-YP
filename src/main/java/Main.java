@@ -1,31 +1,27 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    static int floor;
+    static int humans;
     Products PC = new Products();
     static double sumMain = 0;
     static String strProductsMain = "";
-    static int humans ;
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("На сколько человек необходимо разделить счет?\nВведите целое число");
-
-
+        System.out.println("На сколько человек необходимо разделить счет?");
         while (true) {
-            if (scanner.hasNextInt()) {
-                humans = scanner.nextInt();
+            Scanner scanner = new Scanner(System.in);
+            System.out.println ("Введите целое число");
+            humans = scanner.nextInt();
+                if (humans > 1) {
+                    break;
+                } else if (humans == 1) {
+                    System.out.println("Нет смысла ничего считать и делить :-)");
+                    return;
+                } else {
+                    System.out.println("Некорректное значение для подсчёта!");
+                }break;
             }
-            if (humans > 1)
-                break;
-            if (humans == 1) {
-                System.out.println("Нет смысла ничего считать и делить :-)");
-                return;
-            } else {
-                System.out.println("Некорректное значение для подсчёта!\nВведите целое число.");
-            }
-
-        }
-        Products.productCount();
+               Products.productCount();
         strProductsMain += Products.strProducts;
         System.out.println("Добавленные товары: " + strProductsMain);
         sumMain += Products.sum;
@@ -63,5 +59,5 @@ public class Main {
             a = "рублей";}
         System.out.println("Всем необходиомо заплатить по " + result +" " + a +".");
 
-    }
-}
+
+}}
