@@ -43,7 +43,7 @@ public class Products {
                                 return;
                             default:
                                 while (true) {
-                                    System.out.println("Введите да или Завершить!");
+                                    System.out.println("Введите \"Да\" ,чтобы добавить товар.\nВведите \"Завершить\" ,чтобы завершить процесс добавления товаров.");
                                     String productInput3 = scanner.next();
                                     if (productInput3.equalsIgnoreCase("да")) {
                                         break;
