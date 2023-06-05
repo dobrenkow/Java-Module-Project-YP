@@ -9,8 +9,8 @@ public class Products {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Хотите добавить товар?");
-            String addProduct = scanner.next();
-            switch (addProduct.toLowerCase()) {
+            String productInput = scanner.next();
+            switch (productInput.toLowerCase()) {
                 case "да":
                     while (true) {
                         System.out.println("Введите название товара.");
@@ -21,7 +21,7 @@ public class Products {
                             try {
                                 productPrice = scanner.nextDouble();
                             }catch (InputMismatchException b){
-                                System.out.println("Не целое число");
+                                System.out.println("Введено не число.");
                                 scanner.nextLine();
                             }
                             if (productPrice > 0) {
@@ -33,8 +33,8 @@ public class Products {
                         System.out.println("Товар добавлен!");
                         sum = sum + productPrice;
                         System.out.println("Хотите добавить еще товар? (Введите \"Завершить\" ,чтобы завершить процесс добавления товаров.)");
-                        String addProduct2 = scanner.next();
-                        switch (addProduct2.toLowerCase()) {
+                        String productInput2 = scanner.next();
+                        switch (productInput2.toLowerCase()) {
                             case "да":
                                 break;
                             case "нет":
@@ -44,10 +44,10 @@ public class Products {
                             default:
                                 while (true) {
                                     System.out.println("Введите да или Завершить!");
-                                    String addProduct3 = scanner.next();
-                                    if (addProduct3.equalsIgnoreCase("да")) {
+                                    String productInput3 = scanner.next();
+                                    if (productInput3.equalsIgnoreCase("да")) {
                                         break;
-                                    } else if (addProduct3.equalsIgnoreCase("Завершить")) {
+                                    } else if (productInput3.equalsIgnoreCase("Завершить")) {
                                         return;
                                     } else {
                                     }
